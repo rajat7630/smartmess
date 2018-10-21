@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Smart Mess Tally</title>
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Indie+Flower|Lora" rel="stylesheet">
+    <link rel="stylesheet" href="C:\Users\Siddhant Agarwal\Desktop\Hackathon\smartmesstally\messtally\static\css\mess.css">
+  </head>
+  <body>
+    <ul>
+      <li style="float:left" class="att"><a href="home.html"><strong>Smart Mess</strong></a></li>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="student.html">Student</a></li>
+      <li><a href="expenses.html">Expenses</a></li>
+      <li><a href="current.html">Current</a></li>
+      <li style="float:right"><a href="login.html">Logout</a></li>
+    </ul>
+
+      <div class="ma">
+        <img src="back.jpg" alt="Hostel Mess" class="abc">
+
+        <div class="md">
+
+
+      <h1 id="head">Student Details</h1>
+      <hr>
+      <form class="stdetails" action="student.html" method="post">
+        <label for="name"><strong>Name:</strong></label><br><br>
+        <input type="text" placeholder="Enter Name" ><br>
+        <br>
+        <label for="rollnumber"><strong>Roll Number:</strong></label><br><br>
+        <input type="text" placeholder="Enter Roll Number"><br><br>
+        <label for="phonenumber"><strong>Phone Number:</strong></label><br><br>
+        <input type="text" placeholder="Enter Phone Number"><br><br><br>
+
+        <input type="submit" value="Add Student" class="button1" onclick="addrow()">
+      </form>
+      </div>
+    </div>
+  </body>
+  </html>

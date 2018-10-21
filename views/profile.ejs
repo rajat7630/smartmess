@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Smart Mess Tally</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Indie+Flower" rel="stylesheet">
+    <style>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    li {
+        float: left;
+        position: sticky;
+        font-size: 19px;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        font-family: 'Cabin', sans-serif;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    li a:hover {
+        background-color: #111;
+    }
+    strong{
+      font-size: 22px;
+      color: black;
+
+    }
+    .att{
+      padding-left: 12px;
+      padding-right: 12px;
+      font-family: 'Indie Flower', cursive;
+      background-color: white;
+      color: black;
+    }
+    .att :hover{
+      background-color: white;
+    }
+    .portal{
+      margin-left: 35%;
+      margin-right: 35%;
+      margin-top: 10%;
+      border: solid 3px rgb(29,86,142,0.5);
+      border-radius: 7px;
+    }
+    .header{
+      padding: 7px;
+      background-color: #44BFE5;
+      color: white;
+      font-family: 'Niramit', sans-serif;
+      text-align: center;
+      border-bottom: solid 3px rgb(29,86,142,0.5);
+    }
+    .authenticate{
+      padding: 40px;
+    }
+    .button1{
+      background-color: #44BFE5;
+      border-radius: 7px;
+      font-size: 17px;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+    label{
+      font-size: 10px;
+    }
+    #head{
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 40px;
+      font-family: 'Lora', serif;
+
+    }
+    .details{
+      margin-left: 20%;
+      margin-right: 20%;
+    }
+    .stdetails{
+      margin-top: 50px;
+      font-size: 15px;
+      margin-left: 25%;
+    }
+    .exp{
+      margin-top: 5%;
+    }
+    .button2{
+      background-color: #44BFE5;
+      border-radius: 7px;
+      font-size: 17px;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      margin-bottom: 10%;
+    }
+    .home{
+      font-size: 20px;
+      color: black;
+    }
+    #l1{
+      background-color: rgba(255, 0, 0, 0);
+      list-style-type: disc;
+      list-style-position: inside;
+      text-align: left;
+      padding: 10px;
+    }
+    * {box-sizing: border-box;}
+
+    .topnav {
+      overflow: hidden;
+      background-color: #e9e9e9;
+      padding: 10px;
+    }
+    .topnav .search-container {
+      float: center;
+    }
+
+    .topnav input[type=text] {
+      padding: 6px;
+      margin-top: 8px;
+      font-size: 17px;
+      border: none;
+    }
+
+    .topnav .search-container button {
+      float: center;
+      padding: 6px 10px;
+      margin-top: 8px;
+      margin-right: 16px;
+      background: #ddd;
+      font-size: 17px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .topnav .search-container button:hover {
+      background: #ccc;
+    }
+
+    @media screen and (max-width: 600px) {
+      .topnav .search-container {
+        float: none;
+      }
+      .topnav a, .topnav input[type=text], .topnav .search-container button {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+      }
+      .topnav input[type=text] {
+        border: 1px solid #ccc;
+      }
+    }
+    .ab{
+      text-align: center;
+    }
+    .item{
+      padding: 20px;
+      font-size: 20px;
+    }
+    .abc{
+      margin-left: 130px;
+    }
+    .button3{
+      background-color: #449BE5;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 7px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      text-emphasis: bold;
+    }
+    @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+    .login-page {
+      width: 360px;
+      padding: 8% 0 0;
+      margin: auto;
+    }
+    .form {
+      position: relative;
+      z-index: 1;
+      background: #FFFFFF;
+      max-width: 360px;
+      margin: 0 auto 100px;
+      padding: 45px;
+      padding-top: 25px;
+      text-align: center;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+    .form input {
+      font-family: "Roboto", sans-serif;
+      outline: 0;
+      background: #f2f2f2;
+      width: 100%;
+      border: 0;
+      margin: 0 0 15px;
+      padding: 15px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+    .form button {
+      font-family: "Roboto", sans-serif;
+      text-transform: uppercase;
+      outline: 0;
+      background: #4CAF50;
+      width: 100%;
+      border: 0;
+      padding: 15px;
+      color: #FFFFFF;
+      font-size: 14px;
+      -webkit-transition: all 0.3 ease;
+      transition: all 0.3 ease;
+      cursor: pointer;
+    }
+    .form button:hover,.form button:active,.form button:focus {
+      background: #43A047;
+    }
+    .form .message {
+      margin: 15px 0 0;
+      color: #b3b3b3;
+      font-size: 12px;
+    }
+    .form .message a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+    .form .register-form {
+      display: none;
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    .container:before, .container:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .container .info {
+      margin: 50px auto;
+      text-align: center;
+    }
+    .container .info h1 {
+      margin: 0 0 15px;
+      padding: 0;
+      font-size: 36px;
+      font-weight: 300;
+      color: #1a1a1a;
+    }
+    .container .info span {
+      color: #4d4d4d;
+      font-size: 12px;
+    }
+    .container .info span a {
+      color: #000000;
+      text-decoration: none;
+    }
+    .container .info span .fa {
+      color: #EF3B3A;
+    }
+    .adc {
+      background: #76b852; /* fallback for old browsers */
+      background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+      background: -moz-linear-gradient(right, #76b852, #8DC26F);
+      background: -o-linear-gradient(right, #76b852, #8DC26F);
+      background: linear-gradient(to left, #76b852, #8DC26F);
+      font-family: "Roboto", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    #log{
+      text-align: center;
+      padding-top: 0px;
+      font-family: 'Kodchasan', sans-serif;
+    }
+    #sa {
+      background: #060e1b;
+      overflow: hidden;
+    }
+    .info{
+      background-color: #449BE5;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 7px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      text-emphasis: bold;
+      font-size: 15px;
+      color: black;
+    }
+    .info :hover{
+      background-color: #111;
+    }
+    table{
+      padding: 10px;
+      border-collapse: collapse;
+    }
+    td,th{
+      border: 1px solid black;
+      text-align: center;
+      padding: 8px;
+    }
+    tr:nth-child(even){
+      background-color: #dddddd;
+    }
+
+    .ind{
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 40px;
+    }
+    img{
+      opacity: 0.5;
+      width: 100%;
+      max-height: 79vh;
+      margin:0 auto;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .ma{
+      position: relative;
+      z-index: -1;
+      width: 100%;
+    }
+    .mb
+    {
+      position: absolute;
+      top: 8px;
+      margin-left: 13%;
+      margin-right: 13%;
+      padding-top: 10px;
+      padding-bottom: 70px;
+      margin-bottom: 10%;
+      font-size: 20px;
+      background-color: white;
+      border-radius: 8px;
+    }
+    .abc{
+      max-height: 87vh;
+      max-width: 120vw;
+      margin-left: 0;
+    }
+    p
+    {
+      font-size: 20px;
+    }
+    .md{
+      position: absolute;
+      top: 8px;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-top: 10px;
+      padding-bottom: 70px;
+      padding-right: 200px;
+      padding-left: 200px;
+      margin-bottom: 10%;
+      font-size: 20px;
+      background-color: white;
+      border-radius: 8px;
+
+    }
+    .me{
+      position: absolute;
+      top: 8px;
+      margin-left: 25%;
+      margin-right: 20%;
+      padding-top: 10px;
+      padding-bottom: 70px;
+      padding-right: 270px;
+      padding-left: 270px;
+      margin-bottom: 10%;
+      font-size: 20px;
+      background-color: white;
+      border-radius: 8px;
+    }
+    .abd{
+      max-height: 487vh;
+      max-width: 120vw;
+      margin-left: 0;
+      margin-bottom: 0 auto;
+    }
+
+
+    </style>
+  </head>
+  <body class="ab">
+    <ul>
+      <li style="float:left" class="att"><a href="/home"><strong>Smart Mess</strong></a></li>
+      <li><a href="/home">Home</a></li>
+      <li><a href="/student">Student</a></li>
+      <li><a href="/expenses">Expenses</a></li>
+      <li><a href="/current">Current</a></li>
+      <li style="float:right"><a href="/logout">Logout</a></li>
+    </ul>
+    <div class="topnav">
+  <div class="search-container">
+    <form action="/current" method="post">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
+ <h2><%= student.name %>- <%= student.number%></h2>
+ <hr>
+ <form action="/current/<%= student._id %>" class="item" method="post">
+  <input type="checkbox" name="extra1" value="icecream" class="abc"> Ice-Cream
+  <input type="checkbox" name="extra2" value="Milk" class="abc"> Milk
+  <input type="checkbox" name="extra3" value="sweetdish" class="abc"> Sweet Dish <br><br>
+ <br>
+  <input type="submit" value="Submit" class="button3">
+</form>
+  <form action="/rebate/<%= student._id %>", method="post">
+  <input type="submit" value="Rebate" class="button3" id="absent">
+  </form>
+
+  </body>
+  </html>
